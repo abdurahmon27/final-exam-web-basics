@@ -1,0 +1,26 @@
+
+* {  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: sourceSansPro;
+  src: url("../fonts/source-sans-pro.ttf");
+}
+
+@font-face {
+  font-family: oswaldRegular;
+  src: url("../fonts/oswald.regular.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@import url("./kit/header");
+@import url("./kit/main");
+@import url("./kit/about");
+@import url("./kit/footer");
+@import url("./_variables");
+@import url("./kit//mobile.scss");

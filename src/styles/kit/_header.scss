@@ -1,0 +1,126 @@
+@import url("../mixins");
+@import url("../variables");
+
+.__project-header {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+
+  .__header-nav {
+    position: sticky;
+    z-index: 3;
+    width: 100%;
+    padding-block: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: $fontsans;
+
+    .__header-brand {
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .__burger-menu {
+      display: none;
+    }
+
+    .__menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .__menu-item {
+        list-style: none;
+        margin-right: 30px;
+
+        .__menu-item__link {
+          text-decoration: none;
+          color: #fff;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 2.8px;
+          text-transform: uppercase;
+
+          @include menu-link-hover();
+        }
+      }
+    }
+  }
+
+  .__header-section {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/bg-header.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgb(66 44 176 / 30%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 81%;
+      height: 100%;
+      background: linear-gradient(244deg, #7b61ff 50.92%, #000 157.84%);
+      clip-path: polygon(0 0, 100% 0, 77% 100%, 0% 100%);
+    }
+
+    .__header-section__main {
+      width: 80%;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .__header-section__main-div {
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        row-gap: 20px;
+
+        .__header-seciton__h1 {
+          color: #fff;
+
+          @include font-style($fontowsald, 95px, 700, 110px);
+
+          margin-left: 40px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    .__header-seciton__p {
+      z-index: 3;
+      color: rgb(255 255 255 / 70%);
+
+      @include font-style($fontsans, 34px, 400, 42px);
+
+      margin-top: 50px;
+    }
+
+    svg {
+      transform: scale(135%);
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import url("../mixins");
+@import url("../variables");
+
+.__project__about-div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  color: #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(66 44 176 / 55%);
+  }
+
+  background-image: url("../assets/bg-stories.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+
+  .__main__about-h2 {
+    @include font-style($fontowsald, 48px, 700, 64px);
+
+    z-index: 2;
+    letter-spacing: 2px;
+  }
+
+  .__project__about-button {
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 50px;
+    color: #fff;
+    background-color: #7b61ff;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      transform: translate(5px, -5px);
+    }
+  }
+
+  .__project__about-text {
+    @include font-style($fontsans, 24px, 400, 32px);
+
+    z-index: 2;
+  }
+}
